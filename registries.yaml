@@ -1,0 +1,24 @@
+mirrors:
+  docker.io:
+    endpoint:
+      - "https://registry01.suse/v2/"
+    rewrite:
+      "(.*)": "rke-prod/docker.io/$1"
+  quay.io:
+    endpoint:
+      - "https://registry01.suse/v2/"
+    rewrite:
+      "(.*)": "rke-prod/quay.io/$1"
+  gcr.io:
+    endpoint:
+      - "https://registry01.suse/v2/"
+    rewrite:
+      "(.*)": "rke-prod/gcr.io/$1"
+configs:
+  "registry01.suse":
+    auth:
+      username: robot-registry01 # this is the registry username
+      password: suse1234 # this is the registry password
+    tls:
+      ca_file: /etc/ssl/ca-bundle.pem
+
